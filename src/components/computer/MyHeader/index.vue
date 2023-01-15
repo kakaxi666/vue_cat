@@ -12,8 +12,8 @@
                             router
                             background-color="transparent"
                            >
-                        <el-menu-item index="home">home</el-menu-item>
-                        <el-menu-item index="search">search</el-menu-item>
+                        <el-menu-item index="home">主页</el-menu-item>
+                        <!-- <el-menu-item index="search">search</el-menu-item> -->
                     </el-menu>
                 </el-col>
             </el-row>

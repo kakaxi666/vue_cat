@@ -5,5 +5,12 @@ module.exports = defineConfig({
   devServer:{
     open:true,
     port:8080,
+  },
+  pages: {
+    index: {
+      entry: 'src/main.js', // 入口文件
+      title: '张家的小五只'
+    }
   }
+
 })

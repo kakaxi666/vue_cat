@@ -3,14 +3,13 @@
         <el-container>
             <my-header></my-header>
             <my-main></my-main>
-            <el-footer>Footer</el-footer>
         </el-container>   
     </div>
 </template>
 <script>
 
-import MyHeader from '@/components/MyHeader'
-import MyMain from '@/components/MyMain' 
+import MyHeader from '@/components/computer/MyHeader'
+import MyMain from '@/components/computer/MyMain' 
 export default{
     name: "Home",
     components:{
@@ -40,10 +39,8 @@ export default{
   
   
   .el-main {
-    background-color: #E9EEF3;
+    background-color: #F5F5F5;
     color: #333;
-    text-align: center;
-    line-height: 300px;
   }
   
 </style>

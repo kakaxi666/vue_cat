@@ -10,10 +10,19 @@ VueRouter.prototype.push = function push(location) {
 }  
 import Home from '@/pages/Home'
 import Search from '@/pages/Search'
-export default new VueRouter({
-    //配置路由
-    //引入路由组件
-    routes:[
+import HomeMobel from '@/pages/HomeMobel'
+import SearchMobel from '@/pages/SearchMobel/index.vue'
+
+//默认路由
+export const routes = [
+    {
+      path: "/",
+      redirect: "/home",
+    },
+  ];
+  
+
+export const pcRoutes =[
         {
             path:"/",
             name:"home",
@@ -29,5 +38,42 @@ export default new VueRouter({
             name:"search",
             component:Search,
         }
-    ]
-})
+]
+
+export const mobileRoutes  =[
+        {
+            path:"/",
+            name:"home",
+            component:HomeMobel
+        },
+        {
+            path:"/home",
+            name:"home",
+            component:HomeMobel
+        },
+        {
+            path:"/search",
+            name:"search",
+            component:SearchMobel
+        }
+]
+
+
+const createRouter = () =>
+  new VueRouter({
+    scrollBehavior: () => ({ y: 0 }),
+    mode: "hash",
+    routes: routes,
+  });
+
+
+  const router = createRouter();
+ 
+  // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+  export function resetRouter() {
+    const newRouter = createRouter();
+    router.matcher = newRouter.matcher; // reset router
+  }
+   
+  export default router;
+
